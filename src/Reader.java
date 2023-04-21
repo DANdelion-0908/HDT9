@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Reader {
     
-    private String file;
+    private String dictionaryFile;
+    private String translateFile;
 
-    
-    public ArrayList<String> read(String file){
+    public ArrayList<String> readDictionary(){
         
         ArrayList<String> fileArrayList = new ArrayList<>();
-        String fileString = file;
+        String fileString = dictionaryFile;
         
         try {
             FileReader fileReader = new FileReader(fileString);
@@ -31,12 +31,45 @@ public class Reader {
         
         return fileArrayList; 
     }
-    
-    public String getFile() {
-        return file;
+
+    public ArrayList<String> readTranslate(){
+        
+        ArrayList<String> fileArrayList = new ArrayList<>();
+        String fileString = translateFile;
+        
+        try {
+            FileReader fileReader = new FileReader(fileString);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                fileArrayList.add(line);
+
+            }
+            
+            bufferedReader.close();
+            
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+        }
+        
+        return fileArrayList; 
     }
-    
-    public void setFile(String file) {
-        this.file = file;
+
+    public String getDictionaryFile() {
+        return dictionaryFile;
+    }
+
+    public void setDictionaryFile(String dictionaryFile) {
+        this.dictionaryFile = dictionaryFile;
+    }
+
+    public String getTranslateFile() {
+        return translateFile;
+    }
+
+    public void setTranslateFile(String translateFile) {
+        this.translateFile = translateFile;
     }
 }

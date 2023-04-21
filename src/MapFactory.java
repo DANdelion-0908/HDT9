@@ -1,19 +1,22 @@
 import java.util.TreeMap;
 
-public class MapFactory<T> {
+public class MapFactory {
     
     public IEstructuraArbol createMap(int mapNumber) {
         switch (mapNumber) {
             case 1:
-                ArbolRedBlack redBlack = new ArbolRedBlack();
+            System.out.println("Red-Black Tree creado. \n");
+                ArbolRedBlack<String> redBlack = new ArbolRedBlack<>();
                 return redBlack;
             
             case 2:
-                ArbolSplay splay = new ArbolSplay<>();
+            System.out.println("Splay Tree creado. \n");
+                ArbolSplay<String> splay = new ArbolSplay<>();
                 return splay;
 
             case 3:
-                TreeMap treeMap = new TreeMap<>();
+            System.out.println("TreeMap creado. \n");
+                TreeMap<String, String> treeMap = new TreeMap<>();
                 return (IEstructuraArbol) treeMap;
 
             default:
