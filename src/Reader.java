@@ -7,6 +7,11 @@ public class Reader {
     private String dictionaryFile;
     private String translateFile;
 
+    /**
+     * This Java function reads a dictionary file and returns its contents as an ArrayList of strings.
+     * 
+     * @return An ArrayList of Strings containing the words from a dictionary file.
+     */
     public ArrayList<String> readDictionary(){
         
         ArrayList<String> fileArrayList = new ArrayList<>();
@@ -32,6 +37,11 @@ public class Reader {
         return fileArrayList; 
     }
 
+    /**
+     * This function reads a file and returns its contents as an ArrayList of strings.
+     * 
+     * @return An ArrayList of Strings containing the lines read from a file.
+     */
     public ArrayList<String> readTranslate(){
         
         ArrayList<String> fileArrayList = new ArrayList<>();

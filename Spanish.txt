@@ -18,3 +18,8 @@ Speak,Hablar,Verbo
 Love,Amor,Sustantivo
 Hate,Odio,Sustantivo
 Big,Grande,Adjetivo
+Woman,Mujer,Sustantivo
+Homework,Tarea,Sustantivo
+Do,Hacer,Verbo
+Town,Pueblo,Sustantivo
+Slow,Lento,Adjetivo

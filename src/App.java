@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class App {
 
@@ -14,6 +15,7 @@ public class App {
         ArrayList<String> englishToPrint = new ArrayList<>();
         ArrayList<String> spanishToPrint = new ArrayList<>();
         ArrayList<String> adjectiveToPrint = new ArrayList<>();
+        ArrayList<String> englishSpanish = new ArrayList<>();
 
         System.out.println("Diccionario Inglés - Español \n");
 
@@ -30,6 +32,7 @@ public class App {
 
         MapFactory mapFactory = new MapFactory();
         IEstructuraArbol<String> dictionaryMap = mapFactory.createMap(mapNumber);
+        TreeMap<String, String> map = new TreeMap<>();
 
         System.out.println("Leyendo archivo...");
         new ProgressBar();
@@ -52,8 +55,47 @@ public class App {
             adjectiveToPrint.add(sentenceString[2]); 
         }
 
+        for (int i = 0; i < spanishToPrint.size() - 1; i++) {
+            englishSpanish.add(spanishToPrint.get(i));
+            englishSpanish.add(englishToPrint.get(i));
+        }
+
         for (int i = 0; i < dictionary.size() - 1; i++) {
             dictionaryMap.add(dictionary.get(i));
+        }
+
+        for (String string : dictionary) {
+            String[] words = string.toLowerCase().split(",");
+            map.put(words[0], words[1]);
+        }
+
+        reader.setTranslateFile("texto.txt");
+        translation = reader.readTranslate();
+
+        for (String string : dictionary) {
+            String[] words = string.toLowerCase().split(",");
+
+            map.put(words[0], words[1]);
+        }
+
+        for (String string : translation) {
+            String translateString = "";
+
+            String[] words = string.toLowerCase().split(" ");
+
+            for (String string2 : words) {
+                String replacementString = map.get(string2);
+
+                if(replacementString == null) {
+                    translateString = translateString + "*" + string2 + "* ";
+
+                } else {
+                    translateString = translateString + replacementString + " ";
+
+                }
+            }
+
+            System.out.println(translateString);
         }
     }
 }
