@@ -1,8 +1,3 @@
-/**
- * 
- */
-
-
 import java.util.Comparator;
 
 import structure5.*;
@@ -25,7 +20,6 @@ public class ArbolSplay<T extends Comparable<T>> implements IEstructuraArbol<T> 
 	@Override
 	public void add(T value) {
 		miInternalTree.add(value);
-		
 	}
 
 	@Override

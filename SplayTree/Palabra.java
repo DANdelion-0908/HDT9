@@ -1,9 +1,4 @@
 /**
- * 
- */
-
-
-/**
  * @author MAAG
  *
  */
@@ -24,16 +19,12 @@ public class Palabra implements Comparable<Palabra> {
 		return spanish;
 	}
 
-
-
 	/**
 	 * @param spanish the spanish to set
 	 */
 	public void setSpanish(String spanish) {
 		this.spanish = spanish;
 	}
-
-
 
 	/**
 	 * @return the english
@@ -42,16 +33,12 @@ public class Palabra implements Comparable<Palabra> {
 		return english;
 	}
 
-
-
 	/**
 	 * @param english the english to set
 	 */
 	public void setEnglish(String english) {
 		this.english = english;
 	}
-
-
 
 	@Override
 	public int compareTo(Palabra palabra) {

@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import structure5.SplayTree;
-
 public class App {
 
     public static void main(String[] args) {
@@ -22,7 +20,7 @@ public class App {
         System.out.println("Elige el tipo de mapeo que desees utilizar:");
         System.out.println("1. Red-Black Tree");
         System.out.println("2. Splay Tree.");
-        System.out.println("3. TreeMap. \n");
+        System.out.println("3. Hash Map Tree. \n");
         System.out.print("Tu opción es: ");
 
         try (Scanner keyScanner = new Scanner(System.in)) {
@@ -31,7 +29,7 @@ public class App {
         }
 
         MapFactory mapFactory = new MapFactory();
-        mapFactory.createMap(mapNumber);
+        IEstructuraArbol<String> dictionaryMap = mapFactory.createMap(mapNumber);
 
         System.out.println("Leyendo archivo...");
         new ProgressBar();
@@ -54,8 +52,8 @@ public class App {
             adjectiveToPrint.add(sentenceString[2]); 
         }
 
-        System.out.println(englishToPrint);
-        System.out.println(spanishToPrint);
-        System.out.println(adjectiveToPrint);
+        for (int i = 0; i < dictionary.size() - 1; i++) {
+            dictionaryMap.add(dictionary.get(i));
+        }
     }
 }
