@@ -1,5 +1,3 @@
-import java.util.TreeMap;
-
 public class MapFactory {
     
     /**
@@ -28,8 +26,8 @@ public class MapFactory {
 
             case 3:
                 System.out.println("Hash Map Tree creado. \n");
-                TreeMap<String, String> treeMap = new TreeMap<>();
-                return (IEstructuraArbol) treeMap;
+                TreeMap<String> treeMap = new TreeMap<>();
+                return treeMap;
 
             default:
             return null;
